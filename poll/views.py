@@ -6,7 +6,14 @@ from .forms import TeacherAssessmentForm
 from .models import Teacher, Student
 def home(request):
     return render(request, 'home/index.html')
-
+def studentsRating(request):
+    context = {}
+    context['members'] = Student.objects.order_by('score').reverse().all()
+    return render(request, 'rating/rating.html', context=context)
+def teachersRating(request):
+    context = {}
+    context['members'] = Teacher.objects.order_by('score').reverse().all()
+    return render(request, 'rating/rating.html', context=context)
 def assessment(request, teacher_id, student_id):
     teacher = get_object_or_404(Teacher, pk=teacher_id)
     student = get_object_or_404(Student, pk=student_id)

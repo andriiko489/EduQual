@@ -1,0 +1,48 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style_rating.css' %}">
+</head>
+<body>
+    <div class="header disp">
+        <div class="logo">
+            <p class="logo-text disp"><b>EduQual</b></p>
+        </div>
+        <div class="menu disp">
+            <div class="item">About</div>
+            <div class="item">Log in</div>
+         </div>
+    </div>
+    <div class="rating-page disp-centr">
+        {% for i in members %}
+        <div class="rating disp">
+
+            <div class="info disp">
+                <div class="number text">
+                </div>
+                    <div class="name-secondname disp">
+                        <p class="text">{{i.firstname}} {{i.lastname}} {{i.surname}}</p>
+                    </div>
+            </div>
+            <div class="rating-result disp-centr">
+                <div class="mark  text">
+                    <p>{{ i.score }}</p>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+    <div class="sixth-page">
+        <div class="text-six">Copyright Velocity Inc. Made in Webflow.</div>
+    </div>
+</body>
+</html>
