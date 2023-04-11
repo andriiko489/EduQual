@@ -4,5 +4,5 @@ from .views import home, assessment
 
 urlpatterns = [
     path('', home),
-    path('1/', assessment),
+    path('assessment/<int:teacher_id>/<int:student_id>/', assessment),
 ]

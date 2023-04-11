@@ -103,7 +103,7 @@ class Meta:
 
 def __str__(self):
     return self.textField
-class TeacherLectureAssessment(AbstractBaseRating):
+class TeacherLectureAssessment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     informative = models.IntegerField(default=5)
