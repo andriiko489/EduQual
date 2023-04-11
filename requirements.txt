@@ -5,3 +5,4 @@ Pillow
 django-star-ratings
 oauthlib
 requests
+python-social-auth
