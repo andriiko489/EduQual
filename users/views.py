@@ -1,17 +1,53 @@
+from urllib import request
+from .models import UserProfile
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views import View
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
 
 def home(request):
     return render(request, 'users/home.html')
+
+
+User = get_user_model()
+
+
+class ConnectIDInfoView(View):
+    def __init__(self, **kwargs):
+        super().__init__(kwargs)
+        self.user = None
+
+    def get_connectID_info(request):
+        # Отримати користувача, який ввійшов в систему
+        user = request.user
+
+        # Перевірити, чи є у користувача асоційований обліковий запис "conectID"
+        if user.social_auth.filter(provider='conectid').exists():
+            # Отримати дані профілю "conectID" зі збереженого токену
+            conectid_profile = user.social_auth.get(provider='conectid').extra_data
+
+            # Отримати ім'я, прізвище та електронну пошту з профілю "conectID"
+            first_name = conectid_profile.get('first_name')
+            last_name = conectid_profile.get('last_name')
+            email = conectid_profile.get('email')
+
+            # Використати отримані дані за потреби
+            # Наприклад, вивести їх на веб-сторінці або зберегти в базі даних
+            # ...
+
+            # Повернути отримані дані
+            return {'first_name': first_name, 'last_name': last_name, 'email': email}
+        # else:
+        # Якщо обліковий запис "conectID" не асоційований з обліковим записом користувача,
+        # виконати необхідну обробку або повернути відповідну помилку
+        # ...
 
 
 class RegisterView(View):
