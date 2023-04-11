@@ -7,18 +7,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300&family=Montserrat:wght@200;300;400;700&family=Nanum+Gothic&family=Open+Sans&family=Raleway:wght@500&display=swap" rel="stylesheet">
 <body>
-    <div class="header">
+    <div class="header disp">
         <div class="logo">
-            <p class="logo-text">EduQual</p>
+            <p class="logo-text disp"><b>EduQual</b></p>
         </div>
-        <div class="menu">
-            <div class="item">About</div>
-            <div class="item">Log in</div>
-
-        </div>
+        <div class="menu disp">
+            <a class="item" href="#about">About</a  >
+            <a class="item" href=" {% url 'login' %} ">Log in</a>
+ </div>
     </div>
     <div class="main-page">
         <div class="photo"></div>
@@ -31,14 +32,14 @@
             <div class="button"><span class="butt-text">Saiba Mais</span></div>
         </div>
         <div class="block">
-            <div class="top">
+            <div class="top disp-centr">
                 <img class="icon" src="{% static 'images/star.png' %}" alt="">
                 <p class="top-text">Já faz parte da Ensinio?
                     Acesse sua conta.</p>
                 <div class="button"><span class="butt-text">Entrar</span></div>
             </div>
-            <div class="top marg">
-                <img class="icon" src="{% static 'images/star.png' %}" alt="">
+            <div class="top marg disp-centr">
+                <img class="icon" src="../../../staticfiles/images/icons8-звезда-с-заливкой-64.png" alt="">
                 <p class="top-text">Já faz parte da Ensinio?
                     Acesse sua conta.</p>
                 <div class="button"><span class="butt-text">Entrar</span></div>
@@ -46,13 +47,13 @@
         </div>
 
     </div>
-    <div class="about-page">
+    <div class="about-page  disp-centr">
         <div class="content">
             <p class="hdr">
                 pensamos em cada detalhe
             </p>
             <p class="about-page-text">Queremos que o aluno se sinta confortável enquanto aprende</p>
-            <div class="items">
+            <div class="items disp">
                 <div class="item">
                     <img class="icon" src="{% static 'images/star.png' %}" alt="">
                     <p class="hd-t">
@@ -93,6 +94,7 @@
         </div>
     </div>
     <div class="down-page">
+        <a id="about"></a>
         <div class="about">
             <div class="about-h">
                 about velocity

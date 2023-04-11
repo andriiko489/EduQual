@@ -1,30 +1,36 @@
 body{
     margin: 0;
+    font-family: 'Archivo', sans-serif;
 }
-
+.disp-centr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.disp{
+    display: flex;
+}
 .header{
     background-color: black;
     height: 60px;
     width: 100%;
     background: white;
-    opacity: 0.5;
-    display: flex;
+    opacity: 0.8;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
 }
 .menu{
-    display: flex;
     width: 300px;
     justify-content: space-around;
     font-size: 20px;
 }
 
 .logo-text{
-    display: flex;
     width: 200px;
     justify-content: space-around;
     margin: 0;
-    font-size: 30px;
+    font-size: 34px;
     color: #050f10;
 }
 .photo{
@@ -32,10 +38,9 @@ body{
     background-size: cover;
     width: 100%;
     height: 100%;
-
 }
 .main-page{
-    height: 650px;
+    height: 750px;
     background-color: #ffffff;
     display: flex;
 }
@@ -47,7 +52,6 @@ body{
     top: 150px;
 }
 .p1{
-    font-family: 'Archivo';
     font-weight: 500;
     font-size: 24px;
     line-height: 105%;
@@ -58,7 +62,6 @@ body{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .p2{
-    font-family: 'Archivo';
     font-weight: 700;
     font-size: 40px;
     line-height: 110%;
@@ -68,7 +71,6 @@ body{
     color: #FFFFFF;
 }
 .p3{
-    font-family: 'Inter';
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
@@ -76,9 +78,6 @@ body{
     opacity: 0.9;
 }
 .button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-sizing: border-box;
     width: 150px;
     height: 40px;
@@ -90,16 +89,13 @@ body{
 .butt-text{
     height: 20px;
     color: #FFFFFF;
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 900;
     font-size: 16px;
     line-height: 125%;
 }
 .top{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: 0.4s;
     flex-direction: column;
     position: absolute;
     width: 288px;
@@ -109,6 +105,15 @@ body{
     background: #FFFFFF;
     box-shadow: 0px 4px 60px 10px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
+}
+.top:hover{
+    width: 300px;
+    height: 341px;
+    -webkit-box-shadow: 9px 15px 72px 0px rgba(0,0,0,0.53);
+    -moz-box-shadow: 9px 15px 72px 0px rgba(0,0,0,0.53);
+    -ms-box-shadow: 9px 15px 72px 0px rgba(0,0,0,0.53);
+    -o-box-shadow: 9px 15px 72px 0px rgba(0,0,0,0.53);
+    box-shadow: 9px 15px 72px 0px rgba(0,0,0,0.53);
 }
 .center{
     flex-direction: row;
@@ -121,7 +126,6 @@ body{
     text-align: center;
     width: 184px;
     height: 48px;
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -139,9 +143,7 @@ body{
     margin-left: 328px;
 }
 .about-page{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     width: 100%;
     height: 400px;
     background-color: #F3F3F4;
@@ -153,13 +155,10 @@ body{
 }
 .hdr{
     margin: 0;
-
-    font-family: 'Archivo';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 105%;
-
     /* identical to box height, or 21px */
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -170,22 +169,19 @@ body{
     font-weight: 400;
     font-size: 28px;
     line-height: 125%;
-
     /* identical to box height, or 35px */
     letter-spacing: 0.005em;
-
     /* Neutral Colors / 100 */
     color: #130C25;
 }
 .items{
-    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .item{
     width: 350px;
-
 }
+
 .line{
     width: 50px;
     opacity: 0.5;
