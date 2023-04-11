@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'poll.apps.PollConfig',
     'users.apps.UserConfig',
+    'oauthlib',
+    'requests',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

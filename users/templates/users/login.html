@@ -1,6 +1,6 @@
 {% extends "users/base.html" %}
 {% load socialaccount %}
-{% block title %} Login Page {% endblock title%}
+{% block title %} Login Page {% endblock title %}
 {% block content %}
     <div class="form-content my-3 p-3">
         <div class="container">
@@ -8,7 +8,7 @@
                 <div class="col-lg-5">
                     <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
                         <div class="card-header justify-content-center">
-                          <h3 class="font-weight-light my-1 text-center">Sign In</h3>
+                            <h3 class="font-weight-light my-1 text-center">Sign In</h3>
                         </div>
                         {% if form.errors %}
                             <div class="alert alert-danger alert-dismissible" role="alert">
@@ -36,8 +36,8 @@
                                 <div class="form-row">
                                     <div class="col-md-10 offset-md-1">
                                         <div class="form-group">
-                                          <label class="small mb-1">Password</label>
-                                          {{ form.password }}
+                                            <label class="small mb-1">Password</label>
+                                            {{ form.password }}
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +53,8 @@
                                 <div class="form-row">
                                     <div class="col-md-10 offset-md-1">
                                         <div class="form-group mt-0 mb-1">
-                                                                                   <button name="login" class="col-md-12 btn btn-dark" id="login">Sign in</button>
+                                            <button name="login" class="col-md-12 btn btn-dark" id="login">Sign in
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +62,10 @@
                                 <div class="form-row">
                                     <div class="col-md-10 offset-md-1">
                                         <div class="form-group mt-0 mb-1">
-                                            <a href="{% provider_login_url 'microsoft' %}" class="col-md-12 btn btn-primary" id="login-microsoft">Login with Microsoft</a>
+                                            <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=d65de5ba-e368-4a26-b084-732977d1c4c0&response_type=code&redirect_uri=https://www.google.com/&scope=openid%20profile&response_mode=query&state=YOUR_STATE">
+                                                <img src="https://docs.microsoft.com/en-us/azure/active-directory/develop/media/active-directory-branding-guidelines/sign-in-with-microsoft-light.png"
+                                                     alt="Sign in with Microsoft" width="200">
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -77,5 +81,5 @@
                 </div>
             </div>
         </div>
-     </div>
+    </div>
 {% endblock content %}

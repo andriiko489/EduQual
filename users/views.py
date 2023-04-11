@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views import View
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 

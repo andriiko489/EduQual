@@ -3,3 +3,5 @@ django-allauth[microsoft]
 django-allauth-2fa
 Pillow
 django-star-ratings
+oauthlib
+requests
