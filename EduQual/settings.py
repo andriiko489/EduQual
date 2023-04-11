@@ -43,7 +43,40 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.microsoft',
+    'star_ratings',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    # ...
+    'allauth.account.auth_backends.AuthenticationBackend',
+    # ...
+)
+
+# Set these values based on your Microsoft App registration
+SOCIALACCOUNT_PROVIDERS = {
+    'microsoft': {
+        'APP': {
+            'client_id': 'd65de5ba-e368-4a26-b084-732977d1c4c0',
+            'secret': '23139c31-9136-491e-b1a2-6fe6c799035d',
+            'tenant': 'f8cdef31-a31e-4b4a-93e4-5f571e91255a',
+        },
+        'SCOPE': [
+            'openid',
+            'email',
+            'profile',
+            'offline_access',
+        ],
+        'AUTH_PARAMS': {
+            'resource': 'https://graph.microsoft.com',
+        },
+    }
+}
+
+# Add this line if you want to use email addresses instead of usernames
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
