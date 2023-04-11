@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     <div class="header">
@@ -31,13 +32,13 @@
         </div>
         <div class="block">
             <div class="top">
-                <img class="icon" src="images/star.png" alt="">
+                <img class="icon" src="../../../staticfiles/images/star.png" alt="">
                 <p class="top-text">Já faz parte da Ensinio?
                     Acesse sua conta.</p>
                 <div class="button"><span class="butt-text">Entrar</span></div>
             </div>
             <div class="top marg">
-                <img class="icon" src="images/icons8-звезда-с-заливкой-64.png" alt="">
+                <img class="icon" src="../../../staticfiles/images/icons8-звезда-с-заливкой-64.png" alt="">
                 <p class="top-text">Já faz parte da Ensinio?
                     Acesse sua conta.</p>
                 <div class="button"><span class="butt-text">Entrar</span></div>
@@ -53,7 +54,7 @@
             <p class="about-page-text">Queremos que o aluno se sinta confortável enquanto aprende</p>
             <div class="items">
                 <div class="item">
-                    <img class="icon" src="images/icons8-звезда-с-заливкой-64.png" alt="">
+                    <img class="icon" src="../../../staticfiles/images/icons8-звезда-с-заливкой-64.png" alt="">
                     <p class="hd-t">
                         Trilhas de etapas
                     </p>
@@ -65,7 +66,7 @@
                     </p>
                 </div>
                 <div class="item">
-                    <img class="icon" src="images/icons8-звезда-с-заливкой-64.png" alt="">
+                    <img class="icon" src="../../../staticfiles/images/icons8-звезда-с-заливкой-64.png" alt="">
                     <p class="hd-t">
                         Trilhas de etapas
                     </p>
@@ -77,7 +78,7 @@
                     </p>
                 </div>
                 <div class="item">
-                    <img class="icon" src="images/icons8-звезда-с-заливкой-64.png" alt="">
+                    <img class="icon" src="../../../staticfiles/images/icons8-звезда-с-заливкой-64.png" alt="">
                     <p class="hd-t">
                         Trilhas de etapas
                     </p>
