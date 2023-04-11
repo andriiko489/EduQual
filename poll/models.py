@@ -1,10 +1,10 @@
 from django.db import models
 from django.contrib.contenttypes.fields import GenericRelation
-from star_ratings.models import Rating
+from star_ratings.models import Rating, AbstractBaseRating
 
 class University(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    domain = models.CharField(max_length=50, unique=True)
+    domain = models.CharField(max_length=50, unique=True, null=True, blank=True)
 
     class Meta:
         verbose_name = "University"
@@ -106,8 +106,8 @@ def __str__(self):
 class TeacherLectureAssessment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    informative = GenericRelation(Rating)
-    actuality = GenericRelation(Rating)
+    informative = models.IntegerField(default=5)
+    actuality = models.IntegerField(default=5)
 class Meta:
     verbose_name = "Teacher Lecture Assessment"
     verbose_name_plural = "Teacher Lecture Assessments"

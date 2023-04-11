@@ -1,0 +1,28 @@
+{% load static %}
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+
+  <link rel="stylesheet" href="{% static 'font-awesome.min.css' %}">
+  <script>
+    const ratings = document.querySelectorAll('.rating');
+
+    function addRating(ratingValue, rating) {
+      rating.value = ratingValue;
+      for (let i = 0; i < ratingValue; i++) {
+        rating.children[i].classList.add('checked');
+      }
+    }
+
+    ratings.forEach(rating => {
+      const ratingValue = rating.getAttribute('value');
+      addRating(ratingValue, rating);
+
+      rating.addEventListener('click', () => {
+        addRating(ratingValue, rating);
+      });
+    });
+  </script>
