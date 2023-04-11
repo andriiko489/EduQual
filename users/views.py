@@ -1,5 +1,5 @@
 from urllib import request
-from .models import UserProfile
+#from .models import UserProfile
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView
