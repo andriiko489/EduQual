@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.contenttypes.fields import GenericRelation
+from star_ratings.models import Rating
 # Create your models here.
 class University(models.Model):
     name = models.CharField(max_length=50)
@@ -49,4 +50,16 @@ class Student(models.Model):
     def __str__(self):
         return '{} {} {}'.format(self.firstname, self.lastname, self.surname)
 
+class Question(models.Model):
+    textField = models.CharField(max_length=50)
+    def __str__(self):
+        return self.textField
+class TeacherLectureAssessment(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    informative = GenericRelation(Rating)
+    actuality = GenericRelation(Rating)
+
+    def __str__(self):
+        return '{} {} {}'.format(self.teacher.firstname, self.teacher.lastname, self.teacher.surname)
 
