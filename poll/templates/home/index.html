@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,134 +7,143 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <title>EduQual - Оцінювання навчальних дисциплін</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300&family=Montserrat:wght@200;300;400;700&family=Nanum+Gothic&family=Open+Sans&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300&family=Montserrat:wght@200;300;400;700&family=Nanum+Gothic&family=Open+Sans&family=Raleway:wght@500&display=swap"
+          rel="stylesheet">
+</head>
 <body>
-    <div class="header disp">
-        <div class="logo">
-            <p class="logo-text disp"><b>EduQual</b></p>
-        </div>
-        <div class="menu disp">
-            <a class="item" href="#about">About</a  >
-            <a class="item" href=" {% url 'login' %} ">Log in</a>
- </div>
+<div class="header disp">
+    <div class="logo">
+        <p class="logo-text disp"><b>EduQual</b></p>
     </div>
-    <div class="main-page">
-        <div class="photo"></div>
-        <div class="info">
-            <p class="p1">plataforma all in one</p>
-            <p class="p2">Sua escola online poderosa e lucrativa</p>
-            <p class="p3">Tenha sua própria escola online 100% white
-                label com rede social, gamificação, clube de assinaturas,
-                ecommerce e sistema EAD completo.</p>
-            <div class="button disp-centr"><span class="butt-text">Saiba Mais</span></div>
-        </div>
-        <div class="block">
-            <div class="top disp-centr">
-                <img class="icon" src="{% static 'images/star.png' %}" alt="">
-                <p class="top-text">Já faz parte da Ensinio?
-                    Acesse sua conta.</p>
-                <div class="button disp-centr"><span class="butt-text">Entrar</span></div>
-            </div>
-            <div class="top marg disp-centr">
-                <img class="icon" src="{% static 'images/star.png' %}" alt="">
-                <p class="top-text">Já faz parte da Ensinio?
-                    Acesse sua conta.</p>
-                <div class="button disp-centr"><span class="butt-text">Entrar</span></div>
-            </div>
-        </div>
+    <div class="menu disp">
+        <a class="item" href="#about">Про нас</a>
+        <a class="item" href=" {% url 'login' %} ">Увійти</a>
+    </div>
+</div>
+<div class="main-page">
+    <div class="photo"></div>
+    <div class="info">
+        <p class="p1">Платформа для оцінювання навчальних дисциплін</p>
+        <p class="p2">Оцінювання актуальності матеріалу та якості їх викладання</p>
+        <p class="p3">Отримайте можливість оцінювати та поліпшувати навчальні матеріали вашої школи в онлайн режимі.
+            Наша платформа дозволяє створити власну школу онлайн з можливістю користування соціальною мережею,
+            гейміфікацією, клубом підписників, електронною комерцією та повноцінною системою дистанційного навчання.</p>
 
     </div>
-    <div class="about-page  disp-centr">
-        <div class="content">
-            <p class="hdr">
-                pensamos em cada detalhe
-            </p>
-            <p class="about-page-text">Queremos que o aluno se sinta confortável enquanto aprende</p>
-            <div class="items disp">
-                <div class="item">
-                    <img class="icon" src="{% static 'images/star.png' %}" alt="">
-                    <p class="hd-t">
-                        Trilhas de etapas
-                    </p>
-                    <div class="line"></div>
-                    <p class="text">
-                        Crie planos de estudos especificando aulas
-                        e/ou cursos e definindo a ordem que seus
-                        alunos devem estudar.
-                    </p>
-                </div>
-                <div class="item">
-                    <img class="icon" src="{% static 'images/star.png' %}" alt="">
-                    <p class="hd-t">
-                        Trilhas de etapas
-                    </p>
-                    <div class="line"></div>
-                    <p class="text">
-                        Crie planos de estudos especificando aulas
-                        e/ou cursos e definindo a ordem que seus
-                        alunos devem estudar.
-                    </p>
-                </div>
-                <div class="item">
-                    <img class="icon" src="{% static 'images/star.png' %}" alt="">
-                    <p class="hd-t">
-                        Trilhas de etapas
-                    </p>
-                    <div class="line"></div>
-                    <p class="text">
-                        Crie planos de estudos especificando aulas
-                        e/ou cursos e definindo a ordem que seus
-                        alunos devem estudar.
-                    </p>
+    <div class="block">
+        <a href="/accounts/login/">
+            <div class="top disp-centr">
+                <img class="icon" src="{% static 'images/star.png' %}" alt="">
+                <p class="top-text">Вже з нами?</p>
+                <div class="button disp-centr">
+                    <span class="butt-text">Увійти</span>
                 </div>
             </div>
+        </a>
+        <a href="/accounts/register/">
+            <div class="top marg disp-centr">
+                <img class="icon" src="{% static 'images/star.png' %}" alt="">
+                <p class="top-text">Створити обліковий запис</p>
+                <div class="button disp-centr"><span class="butt-text">Зареєструватися</span></div>
+            </div>
+        </a>
+    </div>
+
+</div>
+<div class="about-page  disp-centr">
+    <div class="content">
+        <p class="hdr">
+            Ми дбаємо про кожну деталь
+        </p>
+        <p class="about-page-text">Наша мета - покращити освітній процес</p>
+        <div class="items disp">
+            <div class="item">
+                <img class="icon" src="{% static 'images/star.png' %}" alt="">
+                <p class="hd-t">
+                    Шляхи з етапів
+                </p>
+                <div class="line"></div>
+                <p class="text">
+                    Створюйте плани навчання, вказуючи конкретні заняття та/або курси та встановлюючи порядок, в якому
+                    ваші учні повинні навчатися.
+                </p>
+            </div>
+            <div class="item">
+                <img class="icon" src="{% static 'images/star.png' %}" alt="">
+                <p class="hd-t">
+                    Підтримка викладачів
+                </p>
+                <div class="line"></div>
+                <p class="text">
+                    Ми надаємо підтримку викладачам, щоб допомогти їм створювати ефективні навчальні матеріали та
+                    проводити відкриті уроки.
+                </p>
+            </div>
+            <div class="item">
+                <img class="icon" src="{% static 'images/star.png' %}" alt="">
+                <p class="hd-t">
+                    Навчання в режимі онлайн
+                </p>
+                <div class="line"></div>
+                <p class="text">
+                    Наша платформа дозволяє вам проводити заняття в режимі онлайн, щоб ви могли навчатися з будь-якого
+                    місця та в будь-який час.
+                </p>
+            </div>
         </div>
     </div>
-    <div class="down-page">
-        <a id="about"></a>
-        <div class="about">
-            <div class="about-h">
-                about velocity
-            </div>
-            <div class="about-text">
-                Lorem ipsum dolor sit amet, consectetur<br>
-                adipiscing elit. Suspendisse varius enim in<br>
-                eros elementum tristique. Duis cursus, mi<br>
-                quis viverra ornare, eros dolor interdum<br>
-                nulla, ut commodo diam libero vitae erat.
-            </div>
+</div>
+<div class="down-page">
+    <a id="about"></a>
+    <div class="about">
+        <div class="about-h">
+            Про EduQual
         </div>
-        <div class="useful">
-            <div class="useful-h">
-                useful links
-            </div>
-            <div class="useful-text">
-                <div class="hr">Phasellus gravida semper nisi</div>
-                <div class="hr">Suspendisse nisl elit</div>
-                <div class="hr">Dellentesque habitant morbi</div>
-                <div class="hr">Etiam sollicitudin ipsum</div>
-            </div>
-        </div>
-        <div class="social">
-            <div class="social-h">
-                social
-            </div>
-            <div class="social-text">
-                <div class="hr-s"><img src="{% static 'images/5.png' %}" class="meregi">Twitter</div> <br>
-                <div class="hr-s"><img src="{% static 'images/6.png' %}" class="meregi">Facebook</div><br>
-                <div class="hr-s"><img src="{% static 'images/7.png' %}" class="meregi">Pinterest</div><br>
-                <div class="hr-s"><img src="{% static 'images/vector(3).png' %}" class="meregi">Google</div><br>
-                <div class="hr-s"><img src="{% static 'images/vector(4).png' %}" class="meregi">Webflow</div><br>
-            </div>
+        <div class="about-text">
+            На сьогоднішній день освіта є ключовим елементом успіху в суспільстві.<br>
+            У світі постійно зростає необхідність у фахівцях, які мають навички та знання в різних галузях.<br>
+            Тому важливо, щоб навчальні дисципліни були актуальними та якісно викладалися.<br>
+            Це дозволить студентам отримувати необхідні знання та навички,<br>
+            щоб стати успішними фахівцями у своїй обраній галузі.
         </div>
     </div>
-    <div class="sixth-page">
-        <div class="text-six">Copyright Velocity Inc. Made in Webflow.</div>
+    <div class="useful">
+        <div class="useful-h">
+            Корисні посилання
+        </div>
+        <div class="useful-text">
+            <div class="hr"><a href="/teachersrating/">Рейтинг вчителів</a></div>
+            <div class="hr"><a href="/studentsrating/">Рейтинг студентів</a></div>
+        </div>
     </div>
+    <div class="social">
+        <div class="social-h">
+            Соціальні мережі
+        </div>
+        <div class="social-text">
+            <div class="hr-s"><img src="{% static 'images/5.png' %}" class="meregi">Twitter</div>
+            <br>
+            <div class="hr-s"><img src="{% static 'images/6.png' %}" class="meregi">Facebook</div>
+            <br>
+            <div class="hr-s"><img src="{% static 'images/7.png' %}" class="meregi">Pinterest</div>
+            <br>
+            <div class="hr-s"><img src="{% static 'images/vector(3).png' %}" class="meregi">Google</div>
+            <br>
+            <div class="hr-s"><img src="{% static 'images/vector(4).png' %}" class="meregi">Webflow</div>
+            <br>
+        </div>
     </div>
+</div>
+<div class="sixth-page">
+    <div class="text-six">©EduQual 2023.</div>
+</div>
+
 </body>
 </html>
+
+
+
