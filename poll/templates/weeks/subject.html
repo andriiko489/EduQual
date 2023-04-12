@@ -15,8 +15,13 @@
         <p class="logo-text disp"><b>EduQual</b></p>
     </div>
     <div class="menu disp">
-        <img class="item icon" src="{% static 'images/icons8-stack-of-coins-64.png' %}">
-        <img class="item icon" src="{% static 'images/icons8-user-50.png' %}">
+        <a class="item" href="#about">Про нас</a>
+        {% if user.is_authenticated %}
+            <a class="item"  href="{% url 'march' %}">Мерч</a>
+            <a class="item" href="{% url 'logout' %}">Вийти</a>
+        {% else %}
+            <a class="item" href="{% url 'login' %}">Увійти</a>
+        {% endif %}
     </div>
 </div>
     <div class="subject-box disp-centr">

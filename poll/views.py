@@ -3,7 +3,7 @@ from django.views.generic import CreateView
 from .models import TeacherAssessment, AssessmentField, Subject
 from django.urls import reverse_lazy
 from .forms import TeacherAssessmentForm
-from .models import Teacher, Student, WeekSchedule, DaySchedule
+from .models import Teacher, Student
 def home(request):
     return render(request, 'home/index.html')
 def studentsRating(request):
@@ -50,5 +50,18 @@ def teachers(request):
     return render(request, "users/teachers.html", context=context)
 
 def subjects(request):
-    context = {'subjects':Subject.objects.all()}
+    context = {'subjects':[]}
+    for i in Subject.teacher.objects.all():
+        context['subjects'].append(str(i))
     return render(request, "subject/subject.html", context=context)
+
+
+def teacher(request):
+    context = {'teacher':[]}
+    for i in Teacher.objects.all():
+        context['teacher'].append(str(i))
+    return render(request, "teacher/teacher.html", context=context)
+
+def march (request):
+    context = {}
+    return render(request, 'march/march.html', context=context)
