@@ -1,48 +1,49 @@
+from django.contrib import messages
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView
-from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
-from django.views import View
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import get_user_model
+from django.utils.decorators import method_decorator
+from django.views import View
+from django.http import JsonResponse
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
-
+import jwt
+import requests
 
 def home(request):
     return render(request, 'users/home.html')
+# User = get_user_model()
+@method_decorator(login_required, name='dispatch')
+class AzureADInfoView(View):
+    def get(self, request):
+        # Отримати токен доступу користувача з запиту
+        access_token = request.GET.get('access_token')
 
+        # Отримати інформацію про користувача з Azure AD
+        user_info = get_azure_ad_info(access_token)
 
-User = get_user_model()
+        # Повернути отримані дані в форматі JSON
+        return JsonResponse(user_info)
 
+def get_azure_ad_info(access_token):
+    # Розшифрувати токен доступу, щоб отримати ідентифікатор користувача
+    decoded_token = jwt.decode(access_token, verify=False)
+    user_id = decoded_token.get('oid')
 
-class ConnectIDInfoView(View):
-    @login_required
-    def get_connectID_info(self, request):
-        # Перевірити, чи користувач автентифікований
-        if request.user.is_authenticated:
-            # Отримати асоційований обліковий запис "conectID" користувача
-            social_auth = request.user.social_auth.filter(provider='conectid').first()
+    # Отримати інформацію про користувача з Azure AD Graph API
+    graph_api_endpoint = f'https://graph.microsoft.com/v1.0/users/{user_id}'
+    headers = {'Authorization': f'Bearer {access_token}'}
+    response = requests.get(graph_api_endpoint, headers=headers)
+    user_info = response.json()
 
-            if social_auth:
-                # Отримати дані профілю "conectID" зі збереженого токену
-                conectid_profile = social_auth.extra_data
+    # Отримати ім'я, прізвище та електронну пошту з інформації про користувача
+    first_name = user_info.get('givenName')
+    last_name = user_info.get('surname')
+    email = user_info.get('mail')
 
-                # Отримати ім'я, прізвище та електронну пошту з профілю "conectID"
-                first_name = conectid_profile.get('first_name')
-                last_name = conectid_profile.get('last_name')
-                email = conectid_profile.get('email')
-
-                # Використати отримані дані за потреби
-                # Наприклад, вивести їх на веб-сторінці або зберегти в базі даних
-                # ...
-
-                # Повернути отримані дані
-                return {'first_name': first_name, 'last_name': last_name, 'email': email}
-            # else:
-        # Якщо обліковий запис "conectID" не асоційований з обліков
-
-
+    # Повернути отримані дані
+    return {'first_name': first_name, 'last_name': last_name, 'email': email}
 class RegisterView(View):
     form_class = RegisterForm
     initial = {'key': 'value'}
