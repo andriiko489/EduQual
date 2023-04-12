@@ -8,7 +8,7 @@
                 <div class="col-lg-5">
                     <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
                         <div class="card-header justify-content-center">
-                            <h3 class="font-weight-light my-1 text-center">Sign In</h3>
+                            <h3 class="font-weight-light my-1 text-center">Вхід</h3>
                         </div>
                         {% if form.errors %}
                             <div class="alert alert-danger alert-dismissible" role="alert">
@@ -28,7 +28,7 @@
                                 <div class="form-row">
                                     <div class="col-md-10 offset-md-1">
                                         <div class="form-group">
-                                            <label class="small mb-1">Username</label>
+                                            <label class="small mb-1">Логін</label>
                                             {{ form.username }}
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@
                                 <div class="form-row">
                                     <div class="col-md-10 offset-md-1">
                                         <div class="form-group">
-                                            <label class="small mb-1">Password</label>
+                                            <label class="small mb-1">Пароль</label>
                                             {{ form.password }}
                                         </div>
                                     </div>
@@ -46,7 +46,7 @@
                                         <div class="form-group">
                                             <!-- Add a Remember me functionality -->
                                             {{ form.remember_me }}
-                                            <label> Remember me</label>
+                                            <label> Запам'ятати мене</label>
                                         </div>
                                     </div>
                                 </div>
@@ -61,10 +61,10 @@
                                 <!-- Add a "Login with Microsoft" button -->
                                 <div class="form-row">
                                     <div class="col-md-10 offset-md-1">
-                                        <div class="form-group mt-0 mb-1">
+                                        <div class="form-group mt-0 mb-1" style="display: flex; align-items: center; justify-content: center;">
                                             <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=d65de5ba-e368-4a26-b084-732977d1c4c0&response_type=code&redirect_uri=http://localhost:8000/accounts/profile/&scope=openid%20profile&response_mode=query&state=YOUR_STATE">
-                                                <img src="https://docs.microsoft.com/en-us/azure/active-directory/develop/media/active-directory-branding-guidelines/sign-in-with-microsoft-light.png"
-                                                     alt="Sign in with Microsoft" width="200">
+                                                <img src="https://docs.microsoft.com/en-us/azure/active-directory/develop/media/active-directory-branding-guidelines/sign-in-with-microsoft-dark.png"
+                                                     alt="Вхід через Microsoft" width="150">
                                             </a>
                                         </div>
                                     </div>
@@ -73,8 +73,8 @@
                         </div>
                         <div class="card-footer text-center">
                             <div class="small">
-                                <a href="{% url 'users-register' %}">Don't have an account yet? Go to signup</a><br>
-                                <a href="{% url 'password_reset' %}"><i>Forgot Password?</i></a>
+                                <a href="{% url 'users-register' %}">Немає облікового запису? Зареєструйтеся</a><br>
+                                <a href="{% url 'password_reset' %}"><i>Забули пароль?</i></a>
                             </div>
                         </div>
                     </div>
