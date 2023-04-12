@@ -45,6 +45,9 @@ def weeks(request):
 def week(request, week_id):
     context = {'subjects':DaySchedule.objects.filter(id = week_id)}
     return render(request, "subject/subject.html", context=context)
+def teachers(request):
+    context = {'subjects':Teacher.objects.all()}
+    return render(request, "users/teachers.html", context=context)
 
 def subjects(request):
     context = {'subjects':Subject.objects.all()}
