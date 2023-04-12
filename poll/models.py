@@ -70,15 +70,22 @@ class Lesson(models.Model):
     type = models.CharField(max_length=20, default="Лекція")
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, null=True)
+    def __str__(self):
+        return self.subject.name
 
 
 class DaySchedule(models.Model):
-    lessons = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, blank=True)
+    lessons = models.ManyToManyField(Lesson)
+    def __str__(self):
+        return self.name
 
 
 class WeekSchedule(models.Model):
-    days = models.ForeignKey(DaySchedule, on_delete=models.CASCADE)
-
+    name = models.CharField(max_length=50, blank=True)
+    days = models.ManyToManyField(DaySchedule)
+    def __str__(self):
+        return self.name
 
 class Course(models.Model):
     year = models.IntegerField()
