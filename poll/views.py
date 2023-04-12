@@ -28,11 +28,13 @@ def assessment(request, teacher_id, student_id):
             assessment.student = student
             assessment.teacher = teacher
             assessment.save()
-            return HttpResponseRedirect("/thanks/")
+            return HttpResponseRedirect("/")
     else:
-        print(3)
-        form = TeacherAssessmentForm()
-    assessment_fields = AssessmentField.objects.filter(teacherassessment=TeacherAssessment.objects.get(id=1))
+        form = TeacherAssessmentForm(teacher_id)
+    teacher = Teacher.objects.filter(id=teacher_id)[0]
+    assessment = TeacherAssessment.objects.filter(teacher=teacher)[0]
+    assessment_fields = AssessmentField.objects.filter(teacherassessment=assessment)
     for i in assessment_fields:
         print(i)
-    return render(request, "assessment/poll.html", {"fields":assessment_fields, "form":form})
+    context = {"fields":assessment_fields, "form":form}
+    return render(request, "assessment/poll.html", context=context)

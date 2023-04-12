@@ -134,7 +134,8 @@ class Question(models.Model):
 class AssessmentField(models.Model):
     question = models.TextField(max_length=100)
     num = models.IntegerField(default=5)
-
+    def __str__(self):
+        return f"{self.question}"
 
 class TeacherAssessment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
