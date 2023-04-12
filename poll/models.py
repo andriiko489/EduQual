@@ -1,6 +1,7 @@
 from django.db import models
 from star_ratings.models import Rating, AbstractBaseRating
 
+
 class University(models.Model):
     name = models.CharField(max_length=50, unique=True)
     domain = models.CharField(max_length=50, unique=True, null=True, blank=True)
@@ -11,6 +12,7 @@ class University(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Institute(models.Model):
     name = models.CharField(max_length=50)
@@ -24,6 +26,7 @@ class Institute(models.Model):
     def __str__(self):
         return self.name
 
+
 class Specialization(models.Model):
     name = models.CharField(max_length=50)
     institute = models.ForeignKey(Institute, on_delete=models.CASCADE)
@@ -35,6 +38,7 @@ class Specialization(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Teacher(models.Model):
     firstname = models.CharField(max_length=30)
@@ -49,6 +53,7 @@ class Teacher(models.Model):
     def __str__(self):
         return f"{self.firstname} {self.lastname} {self.surname}"
 
+
 class Subject(models.Model):
     name = models.CharField(max_length=50)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
@@ -60,16 +65,20 @@ class Subject(models.Model):
     def __str__(self):
         return self.name
 
+
 class Lesson(models.Model):
     type = models.CharField(max_length=20, default="Лекція")
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, null=True)
 
+
 class DaySchedule(models.Model):
     lessons = models.ForeignKey(Lesson, on_delete=models.CASCADE)
 
+
 class WeekSchedule(models.Model):
     days = models.ForeignKey(DaySchedule, on_delete=models.CASCADE)
+
 
 class Course(models.Model):
     year = models.IntegerField()
@@ -83,6 +92,7 @@ class Course(models.Model):
     def __str__(self):
         return str(self.year)
 
+
 class Group(models.Model):
     name = models.CharField(max_length=10, unique=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True, blank=True)
@@ -95,17 +105,21 @@ class Group(models.Model):
     def __str__(self):
         return self.name
 
+
 class Student(models.Model):
     firstname = models.CharField(max_length=30)
     lastname = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
+
     class Meta:
         verbose_name = "Student"
         verbose_name_plural = "Students"
-def __str__(self):
-    return f"{self.firstname} {self.lastname} {self.surname}"
+    def __str__(self):
+        return f"{self.firstname} {self.lastname} {self.surname}"
+
+
 class Question(models.Model):
     textField = models.CharField(max_length=50)
 
@@ -120,10 +134,13 @@ class Question(models.Model):
 class AssessmentField(models.Model):
     question = models.TextField(max_length=100)
     num = models.IntegerField(default=5)
+
+
 class TeacherAssessment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     fields = models.ManyToManyField(AssessmentField)
     text = models.CharField(max_length=200)
+
     def __str__(self):
         return f"{self.teacher.firstname} {self.teacher.lastname} {self.teacher.surname}"

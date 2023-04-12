@@ -1,8 +1,8 @@
 django-allauth
-django-allauth[microsoft]
 django-allauth-2fa
 Pillow
 django-star-ratings
 oauthlib
 requests
 python-social-auth
+django
