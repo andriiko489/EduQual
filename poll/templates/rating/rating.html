@@ -13,10 +13,9 @@
 <body>
 <div class="header disp">
     <div class="logo">
-        <p class="logo-text disp"><b>EduQual</b></p>
+        <a href="{% url 'home' %}" class="logo-text disp"><b>EduQual</b></a>
     </div>
     <div class="menu disp">
-        <a href="/" class="navbar-brand">Головна сторінка</a>
         {% if user.is_authenticated %}
             <a class="item" href="{% url 'logout' %}">Вийти</a>
         {% else %}

@@ -17,7 +17,7 @@
 <body>
 <div class="header disp">
     <div class="logo">
-        <p class="logo-text disp"><b>EduQual</b></p>
+        <a href="{% url 'home' %}" class="logo-text disp"><b>EduQual</b></a>
     </div>
     <div class="menu disp">
         <a class="item" href="#about">Про нас</a>
@@ -120,8 +120,8 @@
             Корисні посилання
         </div>
         <div class="useful-text">
-            <div class="hr"><a href="/teachersrating/">Рейтинг вчителів</a></div>
-            <div class="hr"><a href="/studentsrating/">Рейтинг студентів</a></div>
+            <div class="hr"><a href="{% url 'teachersRating' %}">Рейтинг вчителів</a></div>
+            <div class="hr"><a href="{% url 'studentsRating' %}">Рейтинг студентів</a></div>
         </div>
     </div>
     <div class="social">
