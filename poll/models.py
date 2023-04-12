@@ -143,4 +143,4 @@ class TeacherAssessment(models.Model):
     text = models.CharField(max_length=200)
 
     def __str__(self):
-        return f"{self.teacher.firstname} {self.teacher.lastname} {self.teacher.surname}"
+        return f"{self.text}"

@@ -1,0 +1,188 @@
+body{
+    margin: 0;
+    font-family: 'Archivo', sans-serif;
+}
+.disp{
+    display: flex;
+}
+.disp-centr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    height: 80px;
+    width: 100%;
+    background: #ffffff;
+    opacity: 0.8;
+    align-items: center;
+    justify-content: space-between;
+    /*position: fixed;*/
+}
+.menu{
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.logo-text{
+    width: 200px;
+    justify-content: space-around;
+    margin: 0;
+    font-size: 34px;
+    color: #050f10;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+}
+.poll-page{
+    width: 100%;
+    height: auto;
+    background: linear-gradient(115.99deg, #00E1E7 -3.86%, #5F41D9 61.74%);
+
+}
+.poll{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 80%;
+    min-height: 90vh;
+}
+.rating-area {
+    overflow: hidden;
+    width: 265px;
+    margin: 0;
+}
+.rating-area:not(:checked) > input {
+    display: none;
+}
+.rating-area:not(:checked) > label {
+    float: right;
+    width: 42px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 35px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+    content: '★';
+}
+.rating-area > input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+    color: gold;
+}
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area > label:active {
+    position: relative;
+}
+
+
+.text{
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 125%;
+}
+.poll > .text{
+    font-size: 30px;
+    background:white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mark{
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: #2F91E0;*/
+}
+.input-word {
+    width: 80%;
+    height: 70px;
+    background: #FFFFFF;
+    border: 1px solid #00E1E7FF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top:10px ;
+}
+.mark > .text{
+    background:linear-gradient(115.99deg, #000000 -3.86%, #40278a 61.74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    opacity: 100%;
+
+}
+.hr-date{
+    margin-bottom: 50px;
+}
+
+.question{
+    border-radius: 10px;
+    margin: 20px 0 20px 0;
+    box-sizing: border-box;
+    padding: 0 20px 10px 20px;
+    background: white;
+    height: 70px;
+    width: 80%;
+    flex-direction: column;
+}
+.button{
+    transition: 0.4s;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 40px 0 40px 0;
+    color: #9E9E9E;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 125%;
+}
+.button:hover{
+    width: 220px;
+    height: 60px;
+    background-color: white;
+    color: #40278AFF;
+    font-size: 20px;
+}
+
+.sixth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #383838;
+}
+.text-six {
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #9E9E9E;
+}
+a {
+    text-decoration: none;
+}

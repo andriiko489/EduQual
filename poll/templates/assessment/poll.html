@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style_poll.css' %}">
+    <link rel="stylesheet" href="{% static 'my.css' %}">
+</head>
+<body>
+    <div class="header disp">
+        <div class="logo">
+            <p class="logo-text disp"><b>EduQual</b></p>
+        </div>
+        <div class="menu disp">
+            <img class="item icon"  src="{% static 'images/icons8-stack-of-coins-64.png' %}" alt="">
+            <img class="item icon" src="{% static 'images/icons8-user-50.png' %}" alt="">
+        </div>
+    </div>
+    <div class="poll-page disp-centr">
+            <form method="POST" class="poll disp">
+                {% csrf_token %}
+                <div class="hr-date text">Лекція 23.05</div>
+
+                <div class="hr-text disp">
+                    <p class="text">Предмет: </p>
+                    <p class="text">Українська мова</p>
+                </div>
+                {% for i in fields %}
+                    <div class="question disp">
+                        <div class="mark disp">
+                            <p class="text">{{ i.question }}</p>
+                            <div class="rating-area">
+                                <input type="radio" id="id_field_5_{{ i.id }}" name="field_{{ i.id }}" value="5">
+                                <label for="id_field_5_{{ i.id }}" title="Оценка «5»"></label>
+                                <input type="radio" id="id_field_4_{{ i.id }}" name="field_{{ i.id }}" value="4">
+                                <label for="id_field_4_{{ i.id }}" title="Оценка «4»"></label>
+                                <input type="radio" id="id_field_3_{{ i.id }}" name="field_{{ i.id }}" value="3">
+                                <label for="id_field_3_{{ i.id }}" title="Оценка «3»"></label>
+                                <input type="radio" id="id_field_2_{{ i.id }}" name="field_{{ i.id }}" value="2">
+                                <label for="id_field_2_{{ i.id }}" title="Оценка «2»"></label>
+                                <input type="radio" id="id_field_1_{{ i.id }}" name="field_{{ i.id }}" value="1">
+                                <label for="id_field_1_{{ i.id }}" title="Оценка «1»"></label>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <input class="input-word" type="text" placeholder="Коментар(не обов'язково)" name="text">
+                <button class="button disp-centr" type="submit" id="id_text">Submit</button>
+            </form>
+    </div>
+    <div class="sixth-page">
+        <div class="text-six">Copyright Velocity Inc. Made in Webflow.</div>
+    </div>
+</body>
+</html>
