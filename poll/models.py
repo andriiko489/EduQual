@@ -148,10 +148,10 @@ class AssessmentField(models.Model):
         return f"{self.question}"
 
 class TeacherAssessment(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     fields = models.ManyToManyField(AssessmentField)
-    text = models.CharField(max_length=200)
+    text = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return f"{self.text}"
