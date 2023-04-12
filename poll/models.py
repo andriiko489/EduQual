@@ -1,5 +1,6 @@
 from django.db import models
 from star_ratings.models import Rating, AbstractBaseRating
+from users.models import User
 
 
 class University(models.Model):
@@ -45,6 +46,7 @@ class Teacher(models.Model):
     lastname = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
     score = models.IntegerField(default=0)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
         verbose_name = "Teacher"
@@ -112,6 +114,7 @@ class Student(models.Model):
     surname = models.CharField(max_length=30)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
+    user = models.OneToOneField(User,on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
         verbose_name = "Student"

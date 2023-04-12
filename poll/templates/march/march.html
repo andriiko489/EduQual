@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Merch</title>
+  <link rel="stylesheet" href="{% static 'style_march.css' %}">
+</head>
+<body>
+  <div class="header disp">
+    <div class="logo">
+      <a class="logo-text disp" href="{% url 'home' %}"><b>EduQual</b></a>
+    </div>
+    <div class="menu disp">
+      <img class="item icon" src="{% static 'images/icons8-stack-of-coins-64.png' %}" alt="">
+      <img class="item icon"src="{% static 'images/icons8-user-50.png' %}"  alt="">
+    </div>
+  </div>
+  <div class="march-page disp-centr">
+    <div class="march disp">
+        <div class="block-march disp-centr">
+            <img src="{% static 'images/knykim.futbolka.M.white.1-457x539.jpg'%}" alt="">
+            <div class="price disp-centr">
+                <img class="item icon" src="{% static 'images/icons8-stack-of-coins-64.png'%}" alt="">
+                <div class="text">1500</div>
+            </div>
+
+            <p class="text">Футболка </p>
+            <div class="button disp-centr">Saiba Mais</div>
+        </div>
+
+        <div class="block-march disp-centr">
+            <img src="{% static 'images/knykim.futbolka.M.white.1-457x539.jpg'%}" alt="">
+            <div class="price disp">
+                <img class="item icon" src="{% static 'images/icons8-stack-of-coins-64.png'%}" alt="">
+                <div class="text">1500</div>
+            </div>
+
+            <p class="text">Футболка </p>
+            <div class="button disp-centr">Saiba Mais</div>
+        </div>
+
+        <div class="block-march disp-centr">
+            <img src="{% static 'images/knykim.futbolka.M.white.1-457x539.jpg'%}" alt="">
+            <div class="price disp-centr">
+                <img class="item icon" src="{% static 'images/icons8-stack-of-coins-64.png'%}" alt="">
+                <div class="text">1500</div>
+            </div>
+
+            <p class="text">Футболка </p>
+            <div class="button disp-centr">Saiba Mais</div>
+        </div>
+    </div>
+  </div>
+  <div class="sixth-page">
+      <div class="text-six">Copyright Velocity Inc. Made in Webflow.</div>
+  </div>
+
+</body>
+</html>

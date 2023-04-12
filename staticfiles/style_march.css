@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+    font-family: 'Archivo', sans-serif;
+}
+.disp{
+    display: flex;
+}
+.disp-centr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    height: 80px;
+    width: 100%;
+    background: #ffffff;
+    opacity: 0.8;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+.menu{
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.logo-text{
+    width: 200px;
+    justify-content: space-around;
+    margin: 0;
+    font-size: 34px;
+    color: #050f10;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+}
+.march-page{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(115.99deg, #00E1E7 -3.86%, #5F41D9 61.74%);
+}
+.march{
+    height: auto;
+    width: 80%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.block-march{
+    border-radius: 10px;
+    width: 25%;
+    min-height: 60vh;
+    background-color: white;
+    flex-direction: column;
+}
+.text{
+    background:linear-gradient(115.99deg, #000000 -3.86%, #40278a 61.74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 125%;
+}
+.block-march > img {
+    width: 60%;
+    width: 40%;
+}
+
+.price > img {
+    width: 60px;
+    width: 60px;
+}
+.price > .text{
+    font-weight: 300;
+    font-size: 18px;
+}
+.price{
+    align-items: flex-end;
+}
+.button{
+    transition: 0.4s;
+    box-sizing: border-box;
+    width: 130px;
+    height: 40px;
+    border: 3px solid #540b80;
+    border-radius: 5px;
+    color: #540b80;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 125%;
+}
+.button:hover{
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    color: #40278AFF;
+    font-size: 18px;
+}
+.price > .item{
+    width: 30px;
+    height: 30px;
+}
+.sixth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #383838;
+}
+.text-six {
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #9E9E9E;
+}
+a {
+    text-decoration: none;
+}
