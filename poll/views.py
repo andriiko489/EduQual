@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.views.generic import CreateView
-from .models import TeacherAssessment, AssessmentField
+from .models import TeacherAssessment, AssessmentField, Subject
 from django.urls import reverse_lazy
 from .forms import TeacherAssessmentForm
 from .models import Teacher, Student
@@ -38,3 +38,9 @@ def assessment(request, teacher_id, student_id):
         print(i)
     context = {"fields":assessment_fields, "form":form}
     return render(request, "assessment/poll.html", context=context)
+
+def subjects(request):
+    context = {'subjects':[]}
+    for i in Subject.objects.all():
+        context['subjects'].append(str(i))
+    return render(request, "subject/subject.html", context=context)
