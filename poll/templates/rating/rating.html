@@ -7,29 +7,33 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Rating</title>
     <link rel="stylesheet" href="{% static 'style_rating.css' %}">
 </head>
 <body>
-    <div class="header disp">
-        <div class="logo">
-            <p class="logo-text disp"><b>EduQual</b></p>
-        </div>
-        <div class="menu disp">
-            <div class="item">About</div>
-            <div class="item">Log in</div>
-         </div>
+<div class="header disp">
+    <div class="logo">
+        <p class="logo-text disp"><b>EduQual</b></p>
     </div>
-    <div class="rating-page disp-centr">
-        {% for i in members %}
+    <div class="menu disp">
+        {% if user.is_authenticated %}
+            <a class="item" href="{% url 'logout' %}">Вийти</a>
+        {% else %}
+            <a class="item" href="{% url 'login' %}">Увійти</a>
+        {% endif %}
+    </div>
+</div>
+<div class="rating-page disp-centr">
+    {% for i in members %}
         <div class="rating disp">
 
             <div class="info disp">
                 <div class="number text">
+                    <p>{{ forloop.counter }}.</p>
                 </div>
-                    <div class="name-secondname disp">
-                        <p class="text">{{i.firstname}} {{i.lastname}} {{i.surname}}</p>
-                    </div>
+                <div class="name-secondname disp">
+                    <p class="text">{{ i.firstname }} {{ i.lastname }} {{ i.surname }}</p>
+                </div>
             </div>
             <div class="rating-result disp-centr">
                 <div class="mark  text">
@@ -38,11 +42,10 @@
             </div>
 
         </div>
-        {% endfor %}
-
-    </div>
-    <div class="sixth-page">
-        <div class="text-six">Copyright Velocity Inc. Made in Webflow.</div>
-    </div>
+    {% endfor %}
+</div>
+<div class="sixth-page">
+    <div class="text-six">©EduQual 2023.</div>
+</div>
 </body>
 </html>
