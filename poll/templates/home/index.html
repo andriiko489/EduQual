@@ -21,7 +21,11 @@
     </div>
     <div class="menu disp">
         <a class="item" href="#about">Про нас</a>
-        <a class="item" href=" {% url 'login' %} ">Увійти</a>
+        {% if user.is_authenticated %}
+            <a class="item" href="{% url 'logout' %}">Вийти</a>
+        {% else %}
+            <a class="item" href="{% url 'login' %}">Увійти</a>
+        {% endif %}
     </div>
 </div>
 <div class="main-page">
