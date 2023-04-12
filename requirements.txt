@@ -6,4 +6,3 @@ oauthlib
 requests
 python-social-auth
 django
-social_django
