@@ -255,5 +255,6 @@ body{
     color: #9E9E9E;
 }
 a {
+    color: inherit;
     text-decoration: none;
 }
